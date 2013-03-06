@@ -96,8 +96,8 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 
 %changelog
 * Wed Mar  6 2013 Darryl L. Pierce <dpierce@redhat.com> - 0.4-2
-* First official build for Fedora.
-* Resolves: BZ#906843
+- First official build for Fedora.
+- Resolves: BZ#906843
 
 * Sat Mar  2 2013 Darryl L. Pierce <dpierce@redhat.com> - 0.4-1.1
 - Changed the BR for Ruby to match F19 packaging guidelines.
