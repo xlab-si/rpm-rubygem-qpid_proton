@@ -5,7 +5,7 @@
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
 Version:       0.4
-Release:       2%{?dist}
+Release:       2.1%{?dist}
 Group:         Development/Languages
 License:       ASL 2.0
 
@@ -16,7 +16,7 @@ Source0:       http://rubygems.org/gems/%{gem_name}-%{version}.gem
 %if 0%{?fedora} >= 19
 BuildRequires: ruby(release)
 %else
-BuildRequires: ruby(release) >= %{rubyabi}
+BuildRequires: ruby(abi) >= %{rubyabi}
 BuildRequires: ruby
 %endif
 BuildRequires: ruby-devel
@@ -27,7 +27,7 @@ BuildRequires: libuuid-devel
 %if 0%{?fedora} >= 19
 Requires:      ruby(release)
 %else
-Requires:      ruby(release) >= %{rubyabi}
+Requires:      ruby(abi) >= %{rubyabi}
 %endif
 Requires:      rubygems
 Requires:      qpid-proton = %{version}
@@ -63,7 +63,7 @@ gem spec %{SOURCE0} -l --ruby > %{gem_name}.gemspec
 gem build %{gem_name}.gemspec
 
 export CONFIGURE_ARGS="--with-cflags='%{optflags}'"
-%gem_install 
+%gem_install
 
 
 %install
@@ -95,6 +95,10 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Wed Mar  6 2013 Darryl L. Pierce <dpierce@redhat.com> - 0.4-2.1
+- Changed ruby(release) to ruby(abi) for Fedora < 19.
+- Resolves: BZ#906843
+
 * Wed Mar  6 2013 Darryl L. Pierce <dpierce@redhat.com> - 0.4-2
 - First official build for Fedora.
 - Resolves: BZ#906843
