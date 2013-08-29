@@ -4,8 +4,8 @@
 
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
-Version:       0.4
-Release:       3.2%{?dist}
+Version:       0.5
+Release:       1%{?dist}
 Group:         Development/Languages
 License:       ASL 2.0
 
@@ -95,6 +95,9 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Thu Aug 29 2013 Darryl L. Pierce <dpierce@redhat.com> - 0.5-1
+- Rebased on Proton 0.5.
+
 * Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.4-3.2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
