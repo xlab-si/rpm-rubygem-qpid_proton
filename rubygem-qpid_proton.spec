@@ -5,30 +5,20 @@
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
 Version:       0.6
-Release:       1%{?dist}
-Group:         Development/Languages
+Release:       2%{?dist}
 License:       ASL 2.0
 
 URL:           http://qpid.apache.org/proton
 # rubygems.org is currently read-only and the newer gem cannot be pushed ATM.
 Source0:       http://rubygems.org/gems/%{gem_name}-%{version}.gem
 
-%if 0%{?fedora} >= 19
 BuildRequires: ruby(release)
-%else
-BuildRequires: ruby(abi) >= %{rubyabi}
-BuildRequires: ruby
-%endif
 BuildRequires: ruby-devel
 BuildRequires: rubygems-devel
 BuildRequires: qpid-proton-c-devel = %{version}
 BuildRequires: libuuid-devel
 
-%if 0%{?fedora} >= 19
 Requires:      ruby(release)
-%else
-Requires:      ruby(abi) >= %{rubyabi}
-%endif
 Requires:      rubygems
 Requires:      qpid-proton-c = %{version}
 
@@ -40,11 +30,10 @@ the widest range of messaging applications including brokers, client libraries,
 routers, bridges, proxies, and more. Proton is based on the AMQP 1.0 messaging
 standard.
 
+# === rubygem-qpid_proton-doc
 
 %package doc
 Summary:   Documentation for %{name}
-Group:     Documentation
-Requires:  %{name} = %{version}-%{release}
 BuildArch: noarch
 
 %description doc
@@ -57,7 +46,6 @@ gem unpack %{SOURCE0}
 gem spec %{SOURCE0} -l --ruby > %{gem_name}.gemspec
 
 # apply any patches here
-
 
 %build
 gem build %{gem_name}.gemspec
@@ -95,6 +83,10 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Mon Feb 10 2014 Darryl L. Pierce <dpierce@redhat.com> - 0.6-2
+- Removed requirement on the main package by the doc subpackage.
+- Removed Group declarations.
+
 * Fri Jan 17 2014 Darryl L. Pierce <dpierce@redhat.com> - 0.6-1
 - Rebased on Proton 0.6.
 
