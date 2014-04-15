@@ -5,7 +5,7 @@
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
 Version:       0.6
-Release:       2%{?dist}
+Release:       3%{?dist}
 License:       ASL 2.0
 
 URL:           http://qpid.apache.org/proton
@@ -18,11 +18,8 @@ BuildRequires: rubygems-devel
 BuildRequires: qpid-proton-c-devel = %{version}
 BuildRequires: libuuid-devel
 
-Requires:      ruby(release)
-Requires:      rubygems
 Requires:      qpid-proton-c = %{version}
 
-Provides:      rubygem(%{gem_name}) = %{version}
 
 %description
 Proton is a high performance, lightweight messaging library. It can be used in
@@ -58,9 +55,8 @@ export CONFIGURE_ARGS="--with-cflags='%{optflags}'"
 mkdir -p %{buildroot}%{gem_dir}
 cp -a ./%{gem_dir}/* %{buildroot}%{gem_dir}/
 
-mkdir -p %{buildroot}%{gem_extdir_mri}/lib/
-mv %{buildroot}%{gem_instdir}/lib/cproton.so \
-   %{buildroot}%{gem_extdir_mri}/lib/
+mkdir -p %{buildroot}%{gem_extdir_mri}
+cp -a .%{gem_extdir_mri}/{gem.build_complete,*.so} %{buildroot}%{gem_extdir_mri}/
 
 rm -rf %{buildroot}%{gem_instdir}/ext
 
@@ -83,6 +79,9 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Tue Apr 15 2014 Vít Ondruch <vondruch@redhat.com> - 0.6-3
+- Rebuilt for https://fedoraproject.org/wiki/Changes/Ruby_2.1
+
 * Mon Feb 10 2014 Darryl L. Pierce <dpierce@redhat.com> - 0.6-2
 - Removed requirement on the main package by the doc subpackage.
 - Removed Group declarations.
