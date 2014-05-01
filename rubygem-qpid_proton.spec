@@ -6,7 +6,7 @@
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
 Version:       0.7
-Release:       1%{?dist}
+Release:       2%{?dist}
 License:       ASL 2.0
 
 URL:           http://qpid.apache.org/proton
@@ -35,7 +35,11 @@ standard.
 
 %package doc
 Summary:   Documentation for %{name}
+
+# RHEL6 rdoc doesn't seem to work well with noarch doc packages
+%if 0%{?rhel} != 6
 BuildArch: noarch
+%endif
 
 %description doc
 %{summary}.
@@ -86,6 +90,9 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Thu May  1 2014 Darryl L. Pierce <dpierce@redhat.com> - 0.7-2
+- Made the -doc package arch-specific for EL6 due to rdoc issues.
+
 * Wed Apr 30 2014 Darryl L. Pierce <dpierce@redhat.com> - 0.7-1
 - Rebased on Proton 0.7.
 
