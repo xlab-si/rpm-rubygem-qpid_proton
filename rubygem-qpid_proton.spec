@@ -6,7 +6,7 @@
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
 Version:       0.7
-Release:       2%{?dist}
+Release:       3%{?dist}
 License:       ASL 2.0
 
 URL:           http://qpid.apache.org/proton
@@ -90,6 +90,9 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
 * Thu May  1 2014 Darryl L. Pierce <dpierce@redhat.com> - 0.7-2
 - Made the -doc package arch-specific for EL6 due to rdoc issues.
 
