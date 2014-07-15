@@ -6,7 +6,7 @@
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
 Version:       0.7
-Release:       3%{?dist}
+Release:       4%{?dist}
 License:       ASL 2.0
 
 URL:           http://qpid.apache.org/proton
@@ -31,7 +31,7 @@ the widest range of messaging applications including brokers, client libraries,
 routers, bridges, proxies, and more. Proton is based on the AMQP 1.0 messaging
 standard.
 
-# === rubygem-qpid_proton-doc
+
 
 %package doc
 Summary:   Documentation for %{name}
@@ -90,6 +90,9 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Tue Jul 15 2014 Darryl L. Pierce <dpierce@redhat.com> - 0.7-4
+- Removed intra-package comments.
+
 * Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
