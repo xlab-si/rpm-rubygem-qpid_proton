@@ -25,6 +25,7 @@ BuildRequires: libuuid-devel
 Requires:      qpid-proton-c = %{version}
 
 
+
 %description
 Proton is a high performance, lightweight messaging library. It can be used in
 the widest range of messaging applications including brokers, client libraries,
