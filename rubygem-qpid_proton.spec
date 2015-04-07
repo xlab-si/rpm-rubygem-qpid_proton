@@ -1,12 +1,13 @@
 # Generated from qpid_proton-0.0.1.gem by gem2rpm -*- rpm-spec -*-
 %global gem_name qpid_proton
+%global proton_version 0.9
 
 %{!?gem_extdir_mri: %global gem_extdir_mri %{_libdir}/gems/ruby/%{gem_name}-%{version}}
 
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
-Version:       0.8
-Release:       2%{?dist}
+Version:       0.9.0
+Release:       1%{?dist}
 License:       ASL 2.0
 
 URL:           http://qpid.apache.org/proton
@@ -19,10 +20,11 @@ BuildRequires: ruby(release)
 
 BuildRequires: ruby-devel
 BuildRequires: rubygems-devel
-BuildRequires: qpid-proton-c-devel = %{version}
+BuildRequires: qpid-proton-c-devel = %{proton_version}
 BuildRequires: libuuid-devel
 
-Requires:      qpid-proton-c = %{version}
+Requires:      qpid-proton-c = %{proton_version}
+Requires:      rubygem(json)
 
 
 
@@ -91,6 +93,10 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Tue Apr  7 2015 Darryl L. Pierce <dpierce@redhat.com> - 0.9-1
+- Rebased on qpid_proton 0.9.0.
+- Added dependency on rubygem(json).
+
 * Fri Jan 16 2015 Vít Ondruch <vondruch@redhat.com> - 0.8-2
 - Rebuilt for https://fedoraproject.org/wiki/Changes/Ruby_2.2
 
