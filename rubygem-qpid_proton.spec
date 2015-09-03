@@ -1,13 +1,13 @@
 # Generated from qpid_proton-0.0.1.gem by gem2rpm -*- rpm-spec -*-
 %global gem_name qpid_proton
-%global proton_version 0.9
+%global proton_version 0.10
 
 %{!?gem_extdir_mri: %global gem_extdir_mri %{_libdir}/gems/ruby/%{gem_name}-%{version}}
 
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
-Version:       0.9.0
-Release:       2%{?dist}
+Version:       0.10
+Release:       1%{?dist}
 License:       ASL 2.0
 
 URL:           http://qpid.apache.org/proton
@@ -93,6 +93,9 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Thu Sep  3 2015 Irina Boverman <iboverma@redhat.com> - 0.10.0-1
+- Rebased to qpid_proton 0.10
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 
