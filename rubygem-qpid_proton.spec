@@ -6,7 +6,7 @@
 
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
-Version:       0.10
+Version:       0.10.1
 Release:       1%{?dist}
 License:       ASL 2.0
 
@@ -20,8 +20,9 @@ BuildRequires: ruby(release)
 
 BuildRequires: ruby-devel
 BuildRequires: rubygems-devel
-BuildRequires: qpid-proton-c-devel = %{proton_version}
+BuildRequires: qpid-proton-c-devel >= %{proton_version}
 BuildRequires: libuuid-devel
+BuildRequires: swig
 
 Requires:      qpid-proton-c = %{proton_version}
 Requires:      rubygem(json)
@@ -93,8 +94,8 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
-* Thu Sep  3 2015 Irina Boverman <iboverma@redhat.com> - 0.10.0-1
-- Rebased to qpid_proton 0.10
+* Thu Sep 10 2015 Irina Boverman <iboverma@redhat.com> - 0.10.1-1
+- Rebased to 0.10.1
 
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
