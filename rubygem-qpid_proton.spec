@@ -1,12 +1,12 @@
 # Generated from qpid_proton-0.0.1.gem by gem2rpm -*- rpm-spec -*-
 %global gem_name qpid_proton
-%global proton_version 0.10
+%global proton_version 0.12.0
 
 %{!?gem_extdir_mri: %global gem_extdir_mri %{_libdir}/gems/ruby/%{gem_name}-%{version}}
 
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
-Version:       0.10.1
+Version:       0.12.0
 Release:       1%{?dist}
 License:       ASL 2.0
 
@@ -94,6 +94,9 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Wed Mar 23 2016 Irina Boverman <iboverma@redhat.com> - 0.12.0-1
+- Rebased to 0.12.0
+
 * Thu Sep 10 2015 Irina Boverman <iboverma@redhat.com> - 0.10.1-1
 - Rebased to 0.10.1
 
