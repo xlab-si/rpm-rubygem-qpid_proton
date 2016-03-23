@@ -24,7 +24,7 @@ BuildRequires: qpid-proton-c-devel >= %{proton_version}
 BuildRequires: libuuid-devel
 BuildRequires: swig
 
-Requires:      qpid-proton-c = %{proton_version}
+Requires:      qpid-proton-c >= %{proton_version}
 Requires:      rubygem(json)
 
 
