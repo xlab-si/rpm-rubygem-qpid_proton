@@ -97,6 +97,12 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 * Wed Mar 23 2016 Irina Boverman <iboverma@redhat.com> - 0.12.0-1
 - Rebased to 0.12.0
 
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.10.1-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
+* Mon Jan 11 2016 Vít Ondruch <vondruch@redhat.com> - 0.10.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Changes/Ruby_2.3
+
 * Thu Sep 10 2015 Irina Boverman <iboverma@redhat.com> - 0.10.1-1
 - Rebased to 0.10.1
 
