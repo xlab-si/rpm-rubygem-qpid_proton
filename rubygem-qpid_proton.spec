@@ -61,8 +61,7 @@ gem build %{gem_name}.gemspec
 
 #export CONFIGURE_ARGS="--with-cflags='%{optflags}'"
 export 'CONFIGURE_ARGS=--with-cflags='\''-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -m64 -mtune=generic'\'''
-#%gem_install
-gem install -V --local --build-root . --force --with-qpid-proton-include --document=ri,rdoc qpid_proton-0.13.0.gem
+%gem_install
 
 
 %install
