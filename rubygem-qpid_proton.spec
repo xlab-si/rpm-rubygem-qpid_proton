@@ -23,6 +23,8 @@ BuildRequires: rubygems-devel
 BuildRequires: qpid-proton-c-devel >= %{proton_version}
 BuildRequires: libuuid-devel
 BuildRequires: swig
+BuildRequires: gcc
+BuildRequires: make
 
 Requires:      qpid-proton-c >= %{proton_version}
 Requires:      rubygem(json)
@@ -68,10 +70,6 @@ mkdir -p %{buildroot}%{gem_dir}
 cp -a ./%{gem_dir}/* %{buildroot}%{gem_dir}/
 
 mkdir -p %{buildroot}%{gem_extdir_mri}
-
-find . -name gem.build_complete
-find . -name cproton.so
-ls -l .%{gem_extdir_mri}
 
 %if 0%{?fedora} > 20
 cp -a .%{gem_extdir_mri}/{gem.build_complete,*.so} %{buildroot}%{gem_extdir_mri}/
