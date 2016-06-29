@@ -6,7 +6,7 @@
 
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
-Version:       0.13.0
+Version:       0.13.0.1
 Release:       1%{?dist}
 License:       ASL 2.0
 
@@ -60,7 +60,6 @@ gem spec %{SOURCE0} -l --ruby > %{gem_name}.gemspec
 gem build %{gem_name}.gemspec
 
 #export CONFIGURE_ARGS="--with-cflags='%{optflags}'"
-export 'CONFIGURE_ARGS=--with-cflags='\''-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -m64 -mtune=generic'\'''
 %gem_install
 
 
@@ -69,6 +68,10 @@ mkdir -p %{buildroot}%{gem_dir}
 cp -a ./%{gem_dir}/* %{buildroot}%{gem_dir}/
 
 mkdir -p %{buildroot}%{gem_extdir_mri}
+
+find . -name gem.build_complete
+find . -name cproton.so
+ls -l .%{gem_extdir_mri}
 
 %if 0%{?fedora} > 20
 cp -a .%{gem_extdir_mri}/{gem.build_complete,*.so} %{buildroot}%{gem_extdir_mri}/
@@ -95,7 +98,7 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
-* Thu Jun 23 2016 Irina Boverman <iboverma@redhat.com> - 0.13.0-1
+* Tue Jun 28 2016 Irina Boverman <iboverma@redhat.com> - 0.13.0-1
 - Rebased to 0.13.0
 
 * Wed Mar 23 2016 Irina Boverman <iboverma@redhat.com> - 0.12.0-1
