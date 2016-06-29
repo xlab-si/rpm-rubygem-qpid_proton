@@ -58,10 +58,9 @@ gem spec %{SOURCE0} -l --ruby > %{gem_name}.gemspec
 
 # apply any patches here
 
+
 %build
 gem build %{gem_name}.gemspec
-
-#export CONFIGURE_ARGS="--with-cflags='%{optflags}'"
 %gem_install
 
 
