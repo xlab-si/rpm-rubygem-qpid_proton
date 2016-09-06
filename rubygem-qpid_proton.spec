@@ -6,12 +6,11 @@
 
 Summary:       Ruby language bindings for the Qpid Proton messaging framework
 Name:          rubygem-%{gem_name}
-Version:       0.13.0.1
+Version:       0.14.0
 Release:       1%{?dist}
 License:       ASL 2.0
 
 URL:           http://qpid.apache.org/proton
-# rubygems.org is currently read-only and the newer gem cannot be pushed ATM.
 Source0:       http://rubygems.org/gems/%{gem_name}-%{version}.gem
 
 %if 0%{?fedora} > 0
@@ -95,6 +94,9 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 %doc %{gem_instdir}/TODO
 
 %changelog
+* Tue Sep  6 2016 Irina Boverman <iboverma@redhat.com> - 0.14.0-1
+- Rebased to 0.14.0
+
 * Tue Jun 28 2016 Irina Boverman <iboverma@redhat.com> - 0.13.0-1
 - Rebased to 0.13.0
 
