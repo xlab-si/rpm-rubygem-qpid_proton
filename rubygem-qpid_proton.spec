@@ -1,6 +1,6 @@
 # Generated from qpid_proton-0.0.1.gem by gem2rpm -*- rpm-spec -*-
 %global gem_name qpid_proton
-%global proton_version 0.13.0
+%global proton_version 0.14.0
 
 %{!?gem_extdir_mri: %global gem_extdir_mri %{_libdir}/gems/ruby/%{gem_name}-%{version}}
 
