@@ -97,6 +97,12 @@ rm -rf %{buildroot}%{gem_instdir}/ext
 * Thu Nov 16 2017 Irina Boverman <iboverma@redhat.com> - 0.18.1-1
 - Rebased to 0.18.1
 
+* Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.17.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
+
+* Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 0.17.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
 * Tue Feb 21 2017 Irina Boverman <iboverma@redhat.com> - 0.17.0-1
 - Rebased to 0.17.0
 
